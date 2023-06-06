@@ -1,3 +1,4 @@
+import ReactMarkdown from "react-markdown";
 import PostHeader from "./post-header";
 
 const DUMMY_POST = {
@@ -18,7 +19,7 @@ function PostContent() {
   return (
     <article className={classes.content}>
       <PostHeader title={DUMMY_POST.title} image={imagePath} />
-      CONTENT
+      <ReactMarkdown>{DUMMY_POST.content}</ReactMarkdown>
     </article>
   );
 }
