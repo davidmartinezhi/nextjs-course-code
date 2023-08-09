@@ -32,14 +32,17 @@ async function handler(req, res) {
       process.env.mongodb_password +
       "@" +
       process.env.mongodb_clustername +
-      ".kjefvkf.mongodb.net" +
-      process.env.mongodb.database +
+      ".kjefvkf.mongodb.net/" +
+      process.env.mongodb_database +
       "?retryWrites=true&w=majority";
+
+      console.log(connectionString);
+      //"mongodb+srv://dbDavid:8JAyZFG2KaJtvtTX@atlascluster.kjefvkf.mongodb.net/my-site?retryWrites=true&w=majority"
+
 
     try {
       client = await MongoClient.connect(
         connectionString
-        //"mongodb+srv://dbDavid:8JAyZFG2KaJtvtTX@atlascluster.kjefvkf.mongodb.net/my-site?retryWrites=true&w=majority"
       );
     } catch (error) {
       res.status(500).json({ message: "Could not connect to database." });
