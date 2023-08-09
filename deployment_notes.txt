@@ -1,0 +1,13 @@
+Deployment options
+
+Standar Build and Full static build
+
+Standard build (next build)
+    produces optimized production bundles and a server-side app: requieres nodejs server
+    pages are pre-rendered, but nodejs server is required for API routes, server-side pages and page revalidations
+    re-deploy needed if code changes or you don't use revalidations
+
+Fullstack build (next export)
+    produces 100% static app (hmtl, css, javascript): no node js server required
+    doesn't work if your app uses API routes, server side pages or wants to use page revalidations
+    re-deploy needed for all code and content changes
